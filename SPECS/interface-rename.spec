@@ -1,7 +1,7 @@
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
 Version:        2.0.2
-Release:        1
+Release:        1%{dist}
 License:        GPLv2+
 Group:          System Environment/Base
 Source0:        https://code.citrite.net/rest/archive/latest/projects/XS/repos/%{name}/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
