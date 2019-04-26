@@ -4,7 +4,12 @@ Version:        2.0.2
 Release:        1
 License:        GPLv2+
 Group:          System Environment/Base
-Source0:        https://code.citrite.net/rest/archive/latest/projects/XS/repos/%{name}/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.2&format=tar.gz&prefix=interface-rename-2.0.2#/interface-rename-2.0.2.tar.gz
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.2&format=tar.gz&prefix=interface-rename-2.0.2#/interface-rename-2.0.2.tar.gz) = 76ee8cb29338cf9ee113ff07222d623e177ffddb
+
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  python2-devel
 BuildRequires:  systemd
