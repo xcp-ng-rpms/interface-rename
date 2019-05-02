@@ -1,7 +1,7 @@
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
 Version:        2.0.2
-Release:        1%{dist}
+Release:        1%{?dist}
 License:        GPLv2+
 Group:          System Environment/Base
 
