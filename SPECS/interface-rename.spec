@@ -1,7 +1,7 @@
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
 Version:        2.0.2
-Release:        1%{?dist}
+Release:        1.1%{?dist}
 License:        GPLv2+
 Group:          System Environment/Base
 
@@ -9,6 +9,11 @@ Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/interfac
 
 
 Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.2&format=tar.gz&prefix=interface-rename-2.0.2#/interface-rename-2.0.2.tar.gz) = 76ee8cb29338cf9ee113ff07222d623e177ffddb
+
+# XCP-ng patches
+# https://github.com/xcp-ng-rpms/interface-rename/pull/1
+# udevadm set as ExecStartPre to make sure interface-rename always run
+Patch1000:      interface-rename-2.0.2-ExecStartPre-udevadm.XCP-ng.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  python2-devel
@@ -72,6 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_unitdir}/interface-rename.service
 
 %changelog
+* Thu Jun 13 2019 Robin Lee <cheeselee@fedoraproject.org> - 2.0.2-1.1
+- start interface-rename even if udevadm commands failed
+
 * Mon Mar 26 2018 Simon Rowe <simon.rowe@citrix.com> - 2.0.2-1
 - CA-286300: start interface-rename even if udev settle timed out
 
