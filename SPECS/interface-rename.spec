@@ -1,14 +1,14 @@
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
-Version:        2.0.2
+Version:        2.0.3
 Release:        1
 License:        GPLv2+
 Group:          System Environment/Base
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.2&format=tar.gz&prefix=interface-rename-2.0.2#/interface-rename-2.0.2.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.3&format=tar.gz&prefix=interface-rename-2.0.3#/interface-rename-2.0.3.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.2&format=tar.gz&prefix=interface-rename-2.0.2#/interface-rename-2.0.2.tar.gz) = 76ee8cb29338cf9ee113ff07222d623e177ffddb
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.3&format=tar.gz&prefix=interface-rename-2.0.3#/interface-rename-2.0.3.tar.gz) = ba37573306bc25c17bfa491e463c2a7212f5316d
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  python2-devel
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_unitdir}/interface-rename.service
 
 %changelog
+* Wed Jun 26 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.0.3-1
+- CA-322646: udevadm set as ExecStartPre to make sure interface-rename always run
+
 * Mon Mar 26 2018 Simon Rowe <simon.rowe@citrix.com> - 2.0.2-1
 - CA-286300: start interface-rename even if udev settle timed out
 
