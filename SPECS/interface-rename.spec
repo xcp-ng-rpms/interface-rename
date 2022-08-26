@@ -1,15 +1,11 @@
+%global package_srccommit v2.0.3
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
-Version:        2.0.3
-Release:        1%{?dist}
+Version: 2.0.3
+Release: 1%{?xsrel}%{?dist}
 License:        GPLv2+
 Group:          System Environment/Base
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.3&format=tar.gz&prefix=interface-rename-2.0.3#/interface-rename-2.0.3.tar.gz
-
-
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/interface-rename/archive?at=v2.0.3&format=tar.gz&prefix=interface-rename-2.0.3#/interface-rename-2.0.3.tar.gz) = ba37573306bc25c17bfa491e463c2a7212f5316d
-
+Source0: interface-rename-2.0.3.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  python2-devel
 BuildRequires:  systemd
