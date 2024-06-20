@@ -1,16 +1,18 @@
-%global package_srccommit v2.0.3
+%global package_speccommit a621c540eb018b28c20bc5d16004028e24d8d2d1
+%global package_srccommit v2.0.5
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
-Version: 2.0.3
-Release: 1%{?xsrel}%{?dist}
+Version: 2.0.5
+Release:        1%{?xsrel}%{?dist}
 License:        GPLv2+
 Group:          System Environment/Base
-Source0: interface-rename-2.0.3.tar.gz
+Source0: interface-rename-2.0.5.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 BuildRequires:  systemd
 BuildArch:      noarch
-Requires:       xcp-python-libs systemd
+Requires:       python3-xcp-libs
+Requires:       systemd
 Requires(post): systemd
 Requires(preun): systemd
 Requires(postun): systemd
@@ -68,6 +70,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_unitdir}/interface-rename.service
 
 %changelog
+* Fri May 03 2024 Frediano Ziglio <frediano.ziglio@cloud.com> - 2.0.5-1
+- CP-49083: Do not rotate logs if empty
+
+* Thu Oct 26 2023 Lin Liu <lin.liu@citrix.com> - 2.0.4-1
+- Update to python3 and build for xs8 and xs9
+
 * Wed Jun 26 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.0.3-1
 - CA-322646: udevadm set as ExecStartPre to make sure interface-rename always run
 
