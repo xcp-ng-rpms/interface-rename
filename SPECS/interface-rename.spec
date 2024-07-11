@@ -3,10 +3,12 @@
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
 Version: 2.0.5
-Release:        1%{?xsrel}%{?dist}
+Release:        1.1%{?xsrel}%{?dist}
 License:        GPLv2+
 Group:          System Environment/Base
 Source0: interface-rename-2.0.5.tar.gz
+Patch0:  0001-More-py3-fixes.patch
+
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  python3-devel
 BuildRequires:  systemd
@@ -70,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_unitdir}/interface-rename.service
 
 %changelog
+* Thu Jul 11 2024 Yann Dirson <yann.dirson@valtes.tech> - 2.0.5-1.1
+- Fix python3 port
+
 * Fri May 03 2024 Frediano Ziglio <frediano.ziglio@cloud.com> - 2.0.5-1
 - CP-49083: Do not rotate logs if empty
 
