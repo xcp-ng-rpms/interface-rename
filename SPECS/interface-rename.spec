@@ -1,13 +1,12 @@
-%global package_speccommit a621c540eb018b28c20bc5d16004028e24d8d2d1
-%global package_srccommit v2.0.5
+%global package_speccommit a641d796e17072781218dbc1ec8f1af1064e3180
+%global package_srccommit v2.0.6
 Summary:        A program that rename network interfaces to keep them consistent
 Name:           interface-rename
-Version: 2.0.5
-Release:        1.1%{?xsrel}%{?dist}
+Version: 2.0.6
+Release:        1%{?xsrel}.1%{?dist}
 License:        GPLv2+
 Group:          System Environment/Base
-Source0: interface-rename-2.0.5.tar.gz
-Patch0:  0001-More-py3-fixes.patch
+Source0: interface-rename-2.0.6.tar.gz
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 BuildRequires:  python3-devel
@@ -72,6 +71,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_unitdir}/interface-rename.service
 
 %changelog
+* Tue Mar 04 2025 Samuel Verschelde <stormi-xcp@ylix.fr> - 2.0.6-1.1
+- remove python3 fix that has been upstreamed
+- Sync with 2.0.6-1
+- *** Upstream changelog ***
+  * Wed Jul 24 2024 Lin Liu <lin.liu@citrix.com> - 2.0.6-1
+  - CA-395874: Some python3 fix
+
 * Thu Jul 11 2024 Yann Dirson <yann.dirson@valtes.tech> - 2.0.5-1.1
 - Fix python3 port
 
